@@ -37,18 +37,19 @@
 
     <div class="card" style="width: 18rem;">
       <div>
-        <h2> {{ }} Pageviews</h2>
+        <h2> {{ printPageViews }} Pageviews</h2>
         <div class="slidecontainer">
-          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          <input @change="changePrice(); changePageViews()" type="range" min="0" max="4" v-model="sliderPosition" class="slider" id="myRange">
           <p>Value: <span id="demo"></span></p>
         </div>
-        <p>$ {{ }} /month</p>
+        <p v-if="!saleMode">$ {{ printPrice }} /month</p>
+        <p v-if="saleMode">$ {{ printSalePrice }} /month</p>
       </div>
   
       <div>
         <p>Monthly Billing</p>
         <div class="form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input @click="changeToAnnually(); changePrice()" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
           <label class="form-check-label" for="flexSwitchCheckDefault"></label>
         </div>
         <p>Yearly Billing</p> 
@@ -76,9 +77,8 @@
   <!-- vue -->
   <script src="https://unpkg.com/vue@next"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.bundle.min.js"></script>
   <!-- script js -->
-  <script src="js/app.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
