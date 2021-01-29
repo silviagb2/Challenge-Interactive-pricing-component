@@ -29,14 +29,14 @@
       </div>
     </header>
 
-    <div class="card text-center py-5 px-3">
+    <div class="card text-center pt-5 pb-4 px-3">
       <div>
-        <h2 class="fs-6"> {{ printPageViews }} PAGEVIEWS</h2>
-        <div class="slidecontainer">
+        <h2 class="pb-3 fs-6"> {{ printPageViews }} PAGEVIEWS</h2>
+        <div class="pb-3 slidecontainer">
           <input @change="changePrice(); changePageViews()" type="range" min="0" max="4" v-model="sliderPosition" class="slider" id="myRange">
         </div>
 
-        <div class="p-0 mt-2 d-flex justify-content-center align-items-center">
+        <div class="pb-3 mt-2 d-flex justify-content-center align-items-center">
           <p class="fs-3" v-if="!saleMode">$ {{ printPrice }}</p>
           <p class="fs-3"v-if="saleMode">$ {{ printSalePrice }} </p>
           <p class="fs-6">/month</p>
@@ -47,21 +47,21 @@
         <span class="fs-6">Monthly Billing</span>
         <div class="form-switch">
           <label>
-            <input @click="changeToAnnually(); changePrice()" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <input @click="changeToAnnually(); changePrice()" class=" form-check-input" type="checkbox" id="flexSwitchCheckDefault">
           </label>
         </div>
         <span class="fs-6">Yearly Billing</span> 
-        <span class="fs-6">25%</span> 
+        <span id="discount" class="fs-6 rounded-pill">25%</span> 
       </div>
-      <hr>
+      <hr class="mt-5 mb-3">
       <!-- discount -->
       <div class="card-body" >
         <ul class = "card-list">
-          <li class="fs-6">Unlimited websites</li>
-          <li class="fs-6">100% data ownership</li>
-          <li class="fs-6">Email reports</li>
+          <li class="mb-2 fs-6">Unlimited websites</li>
+          <li class="mb-2 fs-6">100% data ownership</li>
+          <li class="mb-4 fs-6">Email reports</li>
         </ul>
-      <button class="rounded-pill">Start my trial</button>
+      <button class="mt-2 rounded-pill">Start my trial</button>
       </div>
     </div>
 
