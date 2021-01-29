@@ -9,7 +9,7 @@ const app = Vue.createApp({
             printSalePrice: "",
             printPageViews: '100K',
             saleMode: false,
-            salePrices: []
+            salePrices: [],
         }
     },
     created(){

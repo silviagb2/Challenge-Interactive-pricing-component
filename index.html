@@ -15,60 +15,77 @@
   <!-- family font -->
   <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
-
+<!-- title -->
   <title>Frontend Mentor | Interactive pricing component</title>
-
+    
 </head>
 <body id="body">
   <div id="app" class="text-center mx-4">
-
+    <!-- header -->
     <header class="py-5 my-4">
       <div>
         <h1 class="fs-4">Simple, traffic-based pricing</h1>
         <p class="fs-6">Sign-up for our 30-day trial. No credit card required.</p>
       </div>
     </header>
+  <!-- main -->
+    <main class="card text-center pt-5 pb-4 px-3 px-xxl-5">
+      <!-- first part card -->
+      <div class="pageviews_slider_container">
 
-    <div class="card text-center pt-5 pb-4 px-3">
-      <div>
-        <h2 class="pb-3 fs-6"> {{ printPageViews }} PAGEVIEWS</h2>
-        <div class="pb-3 slidecontainer">
+        <!-- pageviews -->
+        <h2 class="pb-3 fs-6 pt-xxl-4"> {{ printPageViews }} PAGEVIEWS</h2>
+
+        <!-- slider -->
+        <div class="pb-3 slidecontainer px-xxl-3">
           <input @change="changePrice(); changePageViews()" type="range" min="0" max="4" v-model="sliderPosition" class="slider" id="myRange">
         </div>
 
-        <div class="pb-3 mt-2 d-flex justify-content-center align-items-center">
+        <!-- price per month -->
+        <div class="pb-3 mt-2 d-flex justify-content-center align-items-center price-per-month">
           <p class="fs-3" v-if="!saleMode">$ {{ printPrice }}</p>
           <p class="fs-3"v-if="saleMode">$ {{ printSalePrice }} </p>
           <p class="fs-6">/month</p>
         </div>
       </div>
-  
-      <div class="d-flex justify-content-around align-items-center">
+
+      <!-- toggle -->
+      <div class="d-flex justify-content-around align-items-center justify-content-xxl-end pe-xxl-4 mt-xxl-4">
         <span class="fs-6">Monthly Billing</span>
-        <div class="form-switch">
+        <div class="form-switch ms-xxl-2">
           <label>
             <input @click="changeToAnnually(); changePrice()" class=" form-check-input" type="checkbox" id="flexSwitchCheckDefault">
           </label>
         </div>
-        <span class="fs-6">Yearly Billing</span> 
-        <span id="discount" class="fs-6 rounded-pill">25%</span> 
+        <span class="ms-xxl-2 fs-6">Yearly Billing</span> 
+        <span id="discount" class="fs-6 rounded-pill ms-xxl-2">
+          <span >25%</span>
+          <span class="d-none d-xxl-inline"> discount</span>
+        </span>
       </div>
+
+    <!-- second part card -->
+      <!-- list -->
       <hr class="mt-5 mb-3">
-      <!-- discount -->
       <div class="card-body" >
         <ul class = "card-list">
           <li class="mb-2 fs-6">Unlimited websites</li>
           <li class="mb-2 fs-6">100% data ownership</li>
           <li class="mb-4 fs-6">Email reports</li>
         </ul>
+
+      <!-- button -->
       <button class="mt-2 rounded-pill">Start my trial</button>
       </div>
-    </div>
+    </main>
 
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
+<!-- footer -->
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Oscar Farré and Silvia Gutierrez</a>.
+      </div>
+    </footer>
 
   </div>
 
