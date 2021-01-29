@@ -10,60 +10,58 @@
 
   <!-- main css -->
   <link rel="stylesheet" href="main.css">
+  <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!-- family font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
 
   <title>Frontend Mentor | Interactive pricing component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
+<body id="body">
+  <div id="app" class="text-center mx-4">
 
-<body>
-  <div id="app" class="text-center m-5">
-
-    <div>
-      <h1>Simple, traffic-based pricing</h1>
-      <p>Sign-up for our 30-day trial. No credit card required.</p>
-    </div>
-
-    <div class="card" style="width: 18rem;">
+    <header class="py-5 my-4">
       <div>
-        <h2> {{ printPageViews }} Pageviews</h2>
+        <h1 class="fs-4">Simple, traffic-based pricing</h1>
+        <p class="fs-6">Sign-up for our 30-day trial. No credit card required.</p>
+      </div>
+    </header>
+
+    <div class="card text-center py-5 px-3">
+      <div>
+        <h2 class="fs-6"> {{ printPageViews }} PAGEVIEWS</h2>
         <div class="slidecontainer">
           <input @change="changePrice(); changePageViews()" type="range" min="0" max="4" v-model="sliderPosition" class="slider" id="myRange">
-          <p>Value: <span id="demo"></span></p>
         </div>
-        <p v-if="!saleMode">$ {{ printPrice }} /month</p>
-        <p v-if="saleMode">$ {{ printSalePrice }} /month</p>
+
+        <div class="p-0 mt-2 d-flex justify-content-center align-items-center">
+          <p class="fs-3" v-if="!saleMode">$ {{ printPrice }}</p>
+          <p class="fs-3"v-if="saleMode">$ {{ printSalePrice }} </p>
+          <p class="fs-6">/month</p>
+        </div>
       </div>
   
-      <div>
-        <p>Monthly Billing</p>
+      <div class="d-flex justify-content-around align-items-center">
+        <span class="fs-6">Monthly Billing</span>
         <div class="form-switch">
-          <input @click="changeToAnnually(); changePrice()" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+          <label>
+            <input @click="changeToAnnually(); changePrice()" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          </label>
         </div>
-        <p>Yearly Billing</p> 
-        <p>25%</p> 
+        <span class="fs-6">Yearly Billing</span> 
+        <span class="fs-6">25%</span> 
       </div>
       <hr>
       <!-- discount -->
-      <div class="card-body">
-        <div>
-          <p>Unlimited websites</p>
-          <p>100% data ownership</p>
-          <p>Email reports</p>
-        </div>
-      <button>Start my trial</button>
+      <div class="card-body" >
+        <ul class = "card-list">
+          <li class="fs-6">Unlimited websites</li>
+          <li class="fs-6">100% data ownership</li>
+          <li class="fs-6">Email reports</li>
+        </ul>
+      <button class="rounded-pill">Start my trial</button>
       </div>
     </div>
 
@@ -76,7 +74,6 @@
 
   <!-- vue -->
   <script src="https://unpkg.com/vue@next"></script>
-  <!-- bootstrap js -->
   <!-- script js -->
   <script src="app.js"></script>
 </body>
