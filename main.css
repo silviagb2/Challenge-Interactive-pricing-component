@@ -7,7 +7,7 @@
   --paleBlue: hsl(226, 100%, 87%); /* CTA Text */
 
 /* Neutral */
-  --white: hsl (0, 0%, 100%); /* Pricing Component Background */
+  --white: hsl(0, 0%, 100%); /* Pricing Component Background */
   --veryPaleBlue: hsl(230, 100%, 99%) ; /* Main Background */
   --lightGrayishBlue: hsl(224, 65%, 95%) ; /* Empty Slider Bar */
   --toggleGrayishBlue: hsl(223, 50%, 87%); /* Toggle Background */
@@ -20,6 +20,7 @@
   background-color: var(--veryPaleBlue);
   background-image: url(/images/bg-pattern.svg);
   background-repeat: no-repeat;
+  color: var(--grayishBlue)
 }
 
 header {
@@ -28,6 +29,13 @@ header {
   background-position: center;
 }
 
+#header_title{
+  font-weight: 800;
+  color: var(--darkBlue);
+  font-size: 15px;
+}
+
+/* Slider */
 .slidecontainer {
     width: 100%;
   }
@@ -51,7 +59,6 @@ header {
   /* http://w3.unpocodetodo.info/css3/variables-css-sliders.php */
 }
 
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -74,6 +81,24 @@ header {
   background: hsl(224, 65%, 95%);
   cursor: pointer;
 }
+/* End Slider */
+
+.price-per-month_number{
+  color: var(--darkBlue);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#toggle .form-check-input{
+  background-color: var(--toggleGrayishBlue);
+  border: 0;
+  height: 1.4em;
+  width: 2.7em;
+}
+
+.toggle-text{
+  font-size: 14px;
+}
 
 #discount{
   background-color: var( --grayishRed);
@@ -83,7 +108,8 @@ header {
 
 .card-list{
   list-style-image: url('/images/icon-check.svg');
-  
+  font-size: 14px;
+
 }
 
 button{
@@ -95,8 +121,14 @@ button{
 }
 
 /* Footer */
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+  font-size: 11px;
+  text-align: center; }
+
+.attribution a {
+  color: hsl(228, 45%, 44%); 
+}
+
 
 /* Media query */
 @media (min-width:1440px){
@@ -125,7 +157,30 @@ button{
     grid-row:1/2;
   }
 
+  #toggle .form-check-input:hover{
+    background-color: var(--strongCyan);
+  }
 
+  .list_button_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .list_button_container .card-list{
+    grid-column: 1/2;
+    grid-row:1/2;
+  }
+
+  .list_button_container button{
+    grid-column: 2/3;
+    grid-row:1/2;
+  }
+
+  button:hover{
+    color: var(--white);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.294);
+
+  }
 
 
 

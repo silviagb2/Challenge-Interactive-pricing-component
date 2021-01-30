@@ -22,14 +22,14 @@
 <body id="body">
   <div id="app" class="text-center mx-4">
     <!-- header -->
-    <header class="py-5 my-4">
+    <header class="py-5 my-3">
       <div>
-        <h1 class="fs-4">Simple, traffic-based pricing</h1>
-        <p class="fs-6">Sign-up for our 30-day trial. No credit card required.</p>
+        <h1 id="header_title" class="fs-4">Simple, traffic-based pricing</h1>
+        <p class="fs-6 px-5">Sign-up for our 30-day trial. No credit card required.</p>
       </div>
     </header>
   <!-- main -->
-    <main class="card text-center pt-5 pb-4 px-3 px-xxl-5">
+    <main class="card text-center rounded-3 border-0 shadow-sm pt-5 pb-4 px-3 px-xxl-5">
       <!-- first part card -->
       <div class="pageviews_slider_container">
 
@@ -43,45 +43,47 @@
 
         <!-- price per month -->
         <div class="pb-3 mt-2 d-flex justify-content-center align-items-center price-per-month">
-          <p class="fs-3" v-if="!saleMode">$ {{ printPrice }}</p>
-          <p class="fs-3"v-if="saleMode">$ {{ printSalePrice }} </p>
-          <p class="fs-6">/month</p>
+          <p class="price-per-month_number" v-if="!saleMode">$ {{ printPrice }}</p>
+          <p class="price-per-month_number"v-if="saleMode">$ {{ printSalePrice }} </p>
+          <p class="fs-6 ps-2">/ month</p>
         </div>
       </div>
 
       <!-- toggle -->
-      <div class="d-flex justify-content-around align-items-center justify-content-xxl-end pe-xxl-4 mt-xxl-4">
-        <span class="fs-6">Monthly Billing</span>
-        <div class="form-switch ms-xxl-2">
+      <div class="d-flex justify-content-around align-items-center justify-content-xxl-end pe-xxl-4 mt-xxl-4 toggle-text">
+        <span>Monthly Billing</span>
+        <div id="toggle" class="form-switch ms-xxl-2">
           <label>
             <input @click="changeToAnnually(); changePrice()" class=" form-check-input" type="checkbox" id="flexSwitchCheckDefault">
           </label>
         </div>
-        <span class="ms-xxl-2 fs-6">Yearly Billing</span> 
-        <span id="discount" class="fs-6 rounded-pill ms-xxl-2">
+        <span class="ms-xxl-2">Yearly Billing</span> 
+        <span id="discount" class=" rounded-pill ms-xxl-2">
           <span >25%</span>
           <span class="d-none d-xxl-inline"> discount</span>
         </span>
       </div>
 
     <!-- second part card -->
-      <!-- list -->
       <hr class="mt-5 mb-3">
-      <div class="card-body" >
+
+      <div class="card-body list_button_container" >
+        <!-- list -->
         <ul class = "card-list">
-          <li class="mb-2 fs-6">Unlimited websites</li>
-          <li class="mb-2 fs-6">100% data ownership</li>
-          <li class="mb-4 fs-6">Email reports</li>
+          <li class="mb-2">Unlimited websites</li>
+          <li class="mb-2">100% data ownership</li>
+          <li class="mb-4">Email reports</li>
         </ul>
 
-      <!-- button -->
-      <button class="mt-2 rounded-pill">Start my trial</button>
+        <!-- button -->
+        <button class="mt-2 rounded-pill mt-xxl-4 mb-xxl-5 mx-xxl-4 ">Start my trial</button>
       </div>
+  
     </main>
 
 <!-- footer -->
     <footer>
-      <div class="attribution">
+      <div class="attribution mt-3">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
         Coded by <a href="#">Oscar Farré and Silvia Gutierrez</a>.
       </div>
