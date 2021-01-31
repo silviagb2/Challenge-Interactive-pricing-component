@@ -49,3 +49,8 @@ const app = Vue.createApp({
 //SI sliderValue = 0 --> 8(index=0)
 //when "toggle" (price*12)*0.25
 app.mount('#app')
+
+document.getElementById("myRange").oninput = function() {
+    var value = (this.value-this.min)/(this.max-this.min)*100
+    this.style.background = 'linear-gradient(to right, #a5f3eb 0%, #a5f3eb ' + value + '%, #eaeefb ' + value + '%, #eaeefb 100%)'
+  };
